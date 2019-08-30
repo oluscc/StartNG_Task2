@@ -5,7 +5,7 @@ This was made possible by HNG.tech & Flutterwave
 
 https://twitter.com/oluscc/status/1166888753849393153
 
-# SartNG_Task3
+# StartNG_Task3
 
 For an update on StartNG Pre-Internship Task 3, check my post using the link below.
 
