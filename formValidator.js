@@ -31,13 +31,13 @@ const formValidator = () => {
         }
 
      If(!emailValidity) {
-        errorMsg("invalidEmail", "Please enter valid name. Minimum of 4 Alphabet Characters");
+        errorMsg("invalidEmail", "Please enter valid email");
     } else {
         errorMsg("invalidEmail", "");
         invalidEmail = false;
         }
 
-     If(!titleValidity) {
+     If((!titleValidity) || (title == "")) {
         errorMsg("invalidTitle", "Please enter valid name. Minimum of 4 Alphabet Characters");
     } else {
         errorMsg("invalidTitle", "");
@@ -45,13 +45,22 @@ const formValidator = () => {
         }
 
      If(!messageValidity) {
-        errorMsg("InvalidMessage", "Please enter valid name. Minimum of 4 Alphabet Characters");
+        errorMsg("InvalidMessage", "Please enter a message of minimum of 20 characters");
     } else {
         errorMsg("InvalidMessage", "");
         InvalidMessage = false;
         }
 
-	//flagIfInvalid(cardHolderNameField, cardHolderNameIsValid);
-    //return cardHolderNameIsValid;
+        if((invalidName || invalidEmail || invalidTitle || InvalidMessage) == true) {
+            return false;
+            } else {
+            
+            var dataPreview = "You've entered the following details: \n" +
+            "Full Name: " + fullName + "\n" +
+            "Email Address: " + email + "\n" +
+            "Title: " + title + "\n" +
+            "Messages: " + message + "\n";
+            alert(dataPreview);
+            }
     
 };
