@@ -334,28 +334,28 @@ const formValidator = () => {
 
     //let invalidName = invalidEmail = invalidTitle = InvalidMessage = true;
 
-    If(!fullNameValidity) {
+    If(fullNameValidity == false) {
         errorMsg("invalidName", "Please enter valid name. Minimum of 4 Alphabet Characters");
     } else {
         errorMsg("invalidName", "");
-        invalidName = false;
+        invalidName == false;
         }
 
-     If(!emailValidity) {
+     If(emailValidity == false) {
         errorMsg("invalidEmail", "Please enter valid email");
     } else {
         errorMsg("invalidEmail", "");
-        invalidEmail = false;
+        invalidEmail == false;
         }
 
-     If((!titleValidity) || (title == "")) {
+     If((titleValidity == false) || (title == "")) {
         errorMsg("invalidTitle", "Please enter valid name. Minimum of 4 Alphabet Characters");
     } else {
         errorMsg("invalidTitle", "");
         invalidTitle = false;
         }
 
-     If(!messageValidity) {
+     If(messageValidity == false) {
         errorMsg("InvalidMessage", "Please enter a message of minimum of 20 characters");
     } else {
         errorMsg("InvalidMessage", "");
