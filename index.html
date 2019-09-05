@@ -2,28 +2,26 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Olusegun Olalere | CV </title>
-        <!-- <script src="modernizr-custom.js"></script>
-        <script src="formValidator.js"></script> -->
-        <script type="text/javascript">         
+       <script type="text/javascript">         
          function formValidator() {
-            var validName = document.forms["contactForm"]["fullname"].value;
-            if (validName == "") {
+            var validName = document.forms["contactForm"]["fullName"].value;
+            if (validName == NULL) {
               alert("Name Cannot Be Empty!");
                 return false;	
             }
             var validEmail = document.forms["contactForm"]["email"].value;
-            if (validEmail == "") {
+            if (validEmail == NULL) {
               alert("Email Cannot Be Empty!");
                 return false;
             }
             var validTitle = document.forms["contactForm"]["title"].value;
-            if (validTitle == "") {
+            if (validTitle == NULL) {
               alert("Message Title Cannot Be Empty!");
                 return false;
             }
             
             var validMessage = document.forms["contactForm"]["message"].value;
-            if (validMessage == "") {
+            if (validMessage == NULL) {
               alert("Message Body Cannot Be Empty!");
                 return false;
             }
