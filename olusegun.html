@@ -1,42 +1,45 @@
 <html>
     <head>
-        <meta content="text/html; charset=UTF-8" http-equiv="content-type">    
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Olusegun Olalere | CV </title>
+        <script src="modernizr-custom.js"></script>
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
 
-    <style>
+   <style>
         body{
             background-color:#ffffff;
-            max-width:75%;
+            max-width:100%;
             /*padding:28.8pt 4.c73.2pt 43.2pt 43.2pt;*/
             padding: 5% 5%;
             border: 1px solid blue;
             margin: 5% 5% 5% 10%;
-        }
-    </style>
+        }        
+    </style> 
 
-    <center>   
-        <table>
-            <tbody>
-                <tr>                    
-                    <td>
+    <!-- <center>  --> 
+        
+                <div class="container">                
+                    <div class="col">
                         <img src="https://res.cloudinary.com/oluscc/image/upload/v1567044097/oluscc_bldbfi.jpg" alt="oluscc photo"
                 width="120" height="120">
                         <h1>Olusegun Olalere</h1>
                         <p><b><span></span>Web Development Enthusiast | </span><span>Freelancer </span><span>| Passionate For Righteousness</span></b></p>
-                    </td>
+                    </div>
                     
-                    <td>
+                    <div class="col">
                             <p style="color:blue;"></p><b>Suite 5 HANIST Plaza, Kamazou</b><br>
                                 <b>Kaduna, KD 800001</b><br><br>
                         <b>+2348183607799</b><br><br>
                         <b><span style="font-size: 1.1em;">oolalere2015@gmail.com</span></span></b></p>        
-                    </td>
-                </tr>
+                    </div>
+                </div>
+           
                 
-                <tr>
-                    <td>  
+                <div class="container">
+                    <div class="col">  
                         <!-- <br><br><br><br><br><br> --> 
                         <br>                 
                         <h3><font color="blue">EXPERIENCE</font></h3>                        
@@ -47,19 +50,19 @@
                         <P>JUNE 1999 - JULY 2002</P>
                         <h4>Hephzibah Computer Engineers Ltd, Kaduna - Sys. Engr.</h4>
                         <P>JANUARY 1999 - JUNE 1999</P> 
-                    </td>
+                    </div>
 
-                    <td>
+                    <div class="col">
                         <h3><font color="blue">SKILLS</font></h3>
                         <p>Website &amp; Web Application Development skills using HTML5, CSS, JavaScript, PHP &amp; WordPress.</span></p>
                         <p>Good oral and written communication skills.</p>
                         <p>Good thinking skills for problem solving and decision making.</p>
-                    </td>
-                </tr>
+                    </div>
+                </div>
 
-                <tr>
+                <div class="container">
 
-                        <td colspan="1" rowspan="1">
+                        <div class="col">
                       <!--   <br><br><br> --> 
                       <br>  
                       <h3><font color="blue">EDUCATION</font></h3>
@@ -70,21 +73,21 @@
                         
                         <h4>St. Murumba College, Jos &mdash; WAEC/GCE</h4>
                         <p>SEPTEMBER 1984 - NOVEMBER 1988</p>
-                    </td>
+                        </div>
 
-                    <td colspan="1" rowspan="1">
+                    <div class="col">
                         <h3><font color="blue">AWARDS</font></h3>
 
                         <p>PluralSight's Certificate of Completion of Online Course: Responsive Websites With Bootstrap 3 (JULY 2019).</p>
                         <p>PluralSight's Certificate of Completion of Online Course: HTML, CSS, and JavaScript: The Big Picture (APRIL 2019).</p>
                         <p>Udemy's Certificate of Completion of Online Course: Beginner Photoshop to HTML5 and CSS3 (AUGUST 2015).</p>
                             
-                    </td>
-                </tr>
+                    </div>
+                </div>
 
-                 <tr>
+                 <div class="container">
 
-                        <td colspan="1" rowspan="1"> 
+                        <div class="col"> 
                             <!-- <br><br><br><br><br><br><br><br>  -->                 
                             <br>
                             <h3><font color="blue">PROJECTS</font></h3>
@@ -96,17 +99,30 @@
                             <p>Deployment of a Website and a Remita powered E-payment Portal. &lt;<a class="c11" href="https://epay.fggcbwaripta.org.ng">https://epay.fggcbwaripta.org.ng</a>&gt;</p>
                             
                             <p>*The Web Technologies used for the above cited projects include PHP, MySQL, WordPress, HTML, CSS &amp; JavaScript.</p>
-                        </td>
+                        </div>
                                         
-                    <td colspan="1" rowspan="1">
+                    <div class="col">
                         <h3><font color="blue">LANGUAGES</font></h3>
                         <p>English, Yoruba, Hausa.</p>
-                    </td>
+                    </div>
 
-                </tr>
-            </tbody>
-        </table>
-    </center>
-        
+                </div>
+               
+    <!-- </center>-->
+
+    <br><br>
+
+    <div class="container">
+       <!--  <div class="col"> -->
+        <form name="contactForm" action="" method="post" onsubmit="return formValidator()" class="contactform">
+            <input type="text" id="fullName" name="fullName" size="70" placeholder="Full Name"><br><br>
+            <input type="email" id="email" name="email" size="70" placeholder="Email"><br><br>
+            <input type="text" id="title" name="title" size="70" placeholder="Message Title (Subject)"><br><br>
+            <textarea id="message" name="message" rows="7" cols="70" placeholder="Drop Your Message Here"></textarea>
+            <input type="submit" value="Submit">
+        </form>
+        <!-- </div>   -->         
+    </div>
+   
     </body>
 </html>
