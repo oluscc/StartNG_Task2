@@ -17,7 +17,182 @@
             padding: 5% 5%;
             border: 1px solid blue;
             margin: 5% 5% 5% 10%;
-        }        
+        } 
+       
+       .no-flexbox .container {
+  background: #fff;
+  overflow: auto;
+}
+
+.no-flexbox .container .col {
+    width: 27%;
+    padding: 30px 3.15% 0;
+    float: left;
+}
+
+.responsive {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+}
+
+@media screen and (max-width: 48rem) {
+  .no-flexbox .container .col {
+    width: 95%;
+  }
+}
+
+.flexbox .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #fff;
+  overflow: auto;
+  margin: 1%
+}
+
+.flexbox .dark {
+  background: #eee;
+}
+
+.flexbox .contactform {
+ width: 600px;
+ background: #fff;
+ padding: 5px;
+ border: 1px solid #ccc;
+ margin: 10px auto 0;
+ border-radius: 5px;
+}
+
+input, textarea, select {
+    border: 1px solid #ccc;
+    padding: 5px;
+
+    margin-left: 5px;
+   /* display: block; */
+    
+    box-sizing: border-box;
+    }
+
+.flexbox .contactform input[type="submit"] {
+ background: #006dcc;
+ color: #fff;
+ margin-top: 5px;
+ cursor: pointer;
+ }
+
+  
+.flexbox .container .col {
+  flex: 1;
+  padding: 1rem;
+}
+
+.flexbox .container .col:nth-child(1) {
+    flex: 1;
+}
+
+.flexbox .container .col:nth-child(2) {
+    flex: 1;
+}
+
+.flexbox .container .col:nth-child(3) {
+   flex: 1;
+}
+
+@media screen and (max-width: 48rem) {
+    .flexbox .container, .contactform {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-flow: column;
+    }
+
+    .flexbox .contactform {
+        width: 200px;
+    } 
+
+    /* input, select {
+        width: 90%;
+    }
+
+    h2, .singular.page-template-right-column-page .entry-title {
+      font-size: 29px;
+      font-size: 1.8125rem;
+      margin: 0 0 .4375em;
+    }*/
+}
+
+a:visited {
+  color: #404040;
+}
+a {
+  color: #404040;
+  text-decoration: none;
+  transition: .2s;
+}
+
+a {
+  background-color: transparent;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+user agent stylesheet
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.entry-title {
+  font-size: 29px;
+  font-size: 1.8125rem;
+  margin: 0 0 .4375em;
+}
+
+h2 {
+  font-size: 23px;
+  font-size: 1.4375rem;
+  line-height: 1.3;
+}
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  font-family: "Libre Baskerville",Libre,Georgia,Times,serif;
+  font-weight: 700;
+  margin: 0 0 .875em;
+}
+user agent stylesheet
+h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+body {
+  background: #fff;
+  word-wrap: break-word;
+}
+body, button, input, select, textarea {
+  color: #404040;
+  font-family: "Libre Baskerville",Libre,Georgia,Times,serif;
+  font-size: 18px;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+user agent stylesheet
+html {
+  color: -internal-root-color;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+       
+       
     </style> 
 
     <!-- <center>  --> 
@@ -130,7 +305,75 @@
         </form>
         <!-- </div>   -->         
     </div>
-   <script src="modernizr-custom.js"></script>
-   <script src="formValidator.js"></script>
+   <script type="text/javascript" src="modernizr-custom.js"></script>
+   <script type="text/javascript" src="formValidator.js"></script>
+
+<script type="text/javascript">
+    let invalidName = invalidEmail = invalidTitle = InvalidMessage = true;
+
+const formValidator = () => {
+
+    const errorMsg = (fieldId, msg) => {
+        document.getElementById(fieldId).innerHTML = msg;
+        }
+
+    const validName = /^[a-zA-Z]{4,40}$/;
+    const validEmail = /^\S+@\S+\.\S+$/;
+    const validTitle = /^[a-zA-Z\s]{3,80}$/;
+    const validMessage = /^[a-zA-Z\s]{20,200}$/;
+
+    let fullName = document.contactForm.fullName.value;
+    let email = document.contactForm.email.value;
+    let title = document.contactForm.title.value;
+    let message = document.contactForm.message.value;
+
+    const fullNameValidity = validName.test(fullName);
+    const emailValidity = validEmail.test(email);
+    const titleValidity = validTitle.test(title);
+    const messageValidity = validMessage.test(message);
+
+    //let invalidName = invalidEmail = invalidTitle = InvalidMessage = true;
+
+    If(!fullNameValidity) {
+        errorMsg("invalidName", "Please enter valid name. Minimum of 4 Alphabet Characters");
+    } else {
+        errorMsg("invalidName", "");
+        invalidName = false;
+        }
+
+     If(!emailValidity) {
+        errorMsg("invalidEmail", "Please enter valid email");
+    } else {
+        errorMsg("invalidEmail", "");
+        invalidEmail = false;
+        }
+
+     If((!titleValidity) || (title == "")) {
+        errorMsg("invalidTitle", "Please enter valid name. Minimum of 4 Alphabet Characters");
+    } else {
+        errorMsg("invalidTitle", "");
+        invalidTitle = false;
+        }
+
+     If(!messageValidity) {
+        errorMsg("InvalidMessage", "Please enter a message of minimum of 20 characters");
+    } else {
+        errorMsg("InvalidMessage", "");
+        InvalidMessage = false;
+        }
+
+        if((invalidName || invalidEmail || invalidTitle || InvalidMessage) == true) {
+            return false;
+            } else {
+            
+            var dataPreview = "You've entered the following details: \n" +
+            "Full Name: " + fullName + "\n" +
+            "Email Address: " + email + "\n" +
+            "Title: " + title + "\n" +
+            "Messages: " + message + "\n";
+            alert(dataPreview);
+            }  
+};
+</script>
     </body>
 </html>
