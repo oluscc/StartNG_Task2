@@ -3,31 +3,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Olusegun Olalere | CV </title>
        <script type="text/javascript">         
-         function formValidator() {
+        function formValidator() {
             var validName = document.forms["contactForm"]["fullName"].value;
-            if (validName == NULL) {
-              alert("Name Cannot Be Empty!");
+            if (validName == "") {
+                alert("Full Name Input Cannot Be Empty!");
                 return false;	
             }
             var validEmail = document.forms["contactForm"]["email"].value;
-            if (validEmail == NULL) {
-              alert("Email Cannot Be Empty!");
+            if (validEmail == "") {
+                alert("Email Input Cannot Be Empty!");
                 return false;
             }
             var validTitle = document.forms["contactForm"]["title"].value;
-            if (validTitle == NULL) {
-              alert("Message Title Cannot Be Empty!");
+            if (validTitle == "") {
+                alert("Message Title Input Cannot Be Empty!");
                 return false;
             }
-            
+
             var validMessage = document.forms["contactForm"]["message"].value;
-            if (validMessage == NULL) {
-              alert("Message Body Cannot Be Empty!");
+            if (validMessage == "") {
+                alert("Message Body Input Cannot Be Empty!");
                 return false;
             }
-         }
-             
-          </script>
+        }             
+    </script>
         <!-- <link rel="stylesheet" href="style.css"> -->
     </head>
 
@@ -318,16 +317,14 @@ html {
 </center>
    
     <div class="container">
-             
-        <!-- <form name="contactForm" action="" method="post" onsubmit="return formValidator()" class="contactform"> -->
-        <form action="thanks.html" name="contactForm" class="contactform" onsubmit="return formValidator()">
-            <input type="text" id="fullName" name="fullName" size="70" placeholder="Full Name"  minlength="4"><br><br>
-            <input type="email" id="email" name="email" size="70" placeholder="Email"><br><br>
-            <input type="text" id="title" name="title" size="70" placeholder="Message Title (Subject)"><br><br>
-            <textarea id="message" name="message" rows="7" cols="70" placeholder="Drop Your Message Here" minlength="20"></textarea>
-            <br>
-            <input type="submit" value="Submit">
-        </form>              
+       <form action="thanks.html" method="post" name="contactForm" class="contactform" onsubmit="return formValidator()">
+        <input type="text" id="fullName" name="fullName" size="70" placeholder="Full Name"  minlength="4"><br><br>
+        <input type="email" id="email" name="email" size="70" placeholder="Email"><br><br>
+        <input type="text" id="title" name="title" size="70" placeholder="Message Title (Subject)" minlength="4"><br><br>
+        <textarea id="message" name="message" rows="7" cols="70" placeholder="Drop Your Message Here" minlength="20"></textarea>
+        <br>
+        <input type="submit" value="Submit">
+    </form>               
     </div>
 
    <script type="text/javascript">
