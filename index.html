@@ -25,6 +25,20 @@
                 alert("Message Body Input Cannot Be Empty!");
                 return false;
             }
+            
+            if((validName || validEmail || validTitle || validMessage) == true) {
+            return false;
+            } else {            
+            var userInputs = "These are the information you provided: \n" +
+            "Full Name: " + validName + "\n" +
+            "Email Address: " + validEmail + "\n" +
+            "Title: " + validTitle + "\n" +
+            "Messages: " + validMessage + "\n" +
+            "\n" +
+            "(PLEASE IGNORE THE ERROR 405 WARNING YOU WILL SEE NEXT ... backend issues)" + "\n";
+
+            alert(userInputs);
+            }
         }             
     </script>
         <!-- <link rel="stylesheet" href="style.css"> -->
