@@ -4,6 +4,31 @@
         <title>Olusegun Olalere | CV </title>
         <!-- <script src="modernizr-custom.js"></script>
         <script src="formValidator.js"></script> -->
+        <script type="text/javascript">         
+         function formValidator() {
+            var validName = document.forms["contactForm"]["fullname"].value;
+            if (validName == "") {
+              alert("Name Cannot Be Empty!");
+                return false;	
+            }
+            var validEmail = document.forms["contactForm"]["email"].value;
+            if (validEmail == "") {
+              alert("Email Cannot Be Empty!");
+                return false;
+            }
+            var validTitle = document.forms["contactForm"]["title"].value;
+            if (validTitle == "") {
+              alert("Message Title Cannot Be Empty!");
+                return false;
+            }
+            
+            var validMessage = document.forms["contactForm"]["message"].value;
+            if (validMessage == "") {
+              alert("Message Body Cannot Be Empty!");
+                return false;
+            }
+             
+          </script>
         <link rel="stylesheet" href="style.css">
     </head>
 
@@ -292,88 +317,17 @@ html {
     <br><br>
 
     <div class="container">
-       <!--  <div class="col"> -->
         <h3><font color="blue">CONTACT ME</font></h3>
         <p>Kindly drop a message for me below if you have any enquiry</p>
         <form name="contactForm" action="" method="post" onsubmit="return formValidator()" class="contactform">
-            <input type="text" id="fullName" name="fullName" size="70" placeholder="Full Name"><br><br>
+            <input type="text" id="fullName" name="fullName" size="70" placeholder="Full Name"  minlength="4"><br><br>
             <input type="email" id="email" name="email" size="70" placeholder="Email"><br><br>
             <input type="text" id="title" name="title" size="70" placeholder="Message Title (Subject)"><br><br>
-            <textarea id="message" name="message" rows="7" cols="70" placeholder="Drop Your Message Here"></textarea>
+            <textarea id="message" name="message" rows="7" cols="70" placeholder="Drop Your Message Here" minlength="20"></textarea>
             <br>
             <input type="submit" value="Submit">
-        </form>
-        <!-- </div>   -->         
+        </form>              
     </div>
    <script type="text/javascript" src="modernizr-custom.js"></script>
-   <script type="text/javascript" src="formValidator.js"></script>
-
-<script type="text/javascript">
-    let invalidName = invalidEmail = invalidTitle = InvalidMessage = true;
-
-const formValidator = () => {
-
-    const errorMsg = (fieldId, msg) => {
-        document.getElementById(fieldId).innerHTML = msg;
-        }
-
-    const validName = /^[a-zA-Z]{4,40}$/;
-    const validEmail = /^\S+@\S+\.\S+$/;
-    const validTitle = /^[a-zA-Z\s]{3,80}$/;
-    const validMessage = /^[a-zA-Z\s]{20,200}$/;
-
-    let fullName = document.contactForm.fullName.value;
-    let email = document.contactForm.email.value;
-    let title = document.contactForm.title.value;
-    let message = document.contactForm.message.value;
-
-    const fullNameValidity = validName.test(fullName);
-    const emailValidity = validEmail.test(email);
-    const titleValidity = validTitle.test(title);
-    const messageValidity = validMessage.test(message);
-
-    //let invalidName = invalidEmail = invalidTitle = InvalidMessage = true;
-
-    If(fullNameValidity == false) {
-        errorMsg("invalidName", "Please enter valid name. Minimum of 4 Alphabet Characters");
-    } else {
-        errorMsg("invalidName", "");
-        invalidName == false;
-        }
-
-     If(emailValidity == false) {
-        errorMsg("invalidEmail", "Please enter valid email");
-    } else {
-        errorMsg("invalidEmail", "");
-        invalidEmail == false;
-        }
-
-     If((titleValidity == false) || (title == "")) {
-        errorMsg("invalidTitle", "Please enter valid name. Minimum of 4 Alphabet Characters");
-    } else {
-        errorMsg("invalidTitle", "");
-        invalidTitle = false;
-        }
-
-     If(messageValidity == false) {
-        errorMsg("InvalidMessage", "Please enter a message of minimum of 20 characters");
-    } else {
-        errorMsg("InvalidMessage", "");
-        InvalidMessage = false;
-        }
-
-        if((invalidName || invalidEmail || invalidTitle || InvalidMessage) == true) {
-            return false;
-            } else {
-            
-            var dataPreview = "You've entered the following details: \n" +
-            "Full Name: " + fullName + "\n" +
-            "Email Address: " + email + "\n" +
-            "Title: " + title + "\n" +
-            "Messages: " + message + "\n";
-            alert(dataPreview);
-            }  
-};
-</script>
-    </body>
+     </body>
 </html>
