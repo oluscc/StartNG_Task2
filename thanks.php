@@ -10,7 +10,7 @@
  echo '
         <script>
         alert("Thank You For Contacting Me");    
-        
+        window.location.replace("https://oluscc.github.io/StartNG_Tasks");
         </script>
     ';
 
