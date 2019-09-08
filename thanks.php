@@ -11,7 +11,7 @@
         <script>
         alert("Thank You For Contacting Me");    
         //window.location.replace("https://oluscc.github.io/StartNG_Tasks");
-        window.location.replace("index.html");
+        //window.location.replace("index.html");
         </script>
     ';
 
